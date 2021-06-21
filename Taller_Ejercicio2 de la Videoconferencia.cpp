@@ -152,8 +152,8 @@ void Tiempo::capturarDatos(){		//Los :: significa que capturarDatos es de la cla
 //Funcion para  imprimir el Tiempo en formato universal**********************************************************
 void Tiempo::imprimeUniversal(){
 	cout << "\n\tHora universal:";
-	cout << setfill( '0' ) 					//setfill rellena con el string cero ('0') donde haya datos con un digito
-	<< setw( 2 ) << hora << ":" 			//Sirve para dar formato a los numeros ej. (sewt 2 = 00) (sewt 3 = 000)
+	cout << setfill( '0' ) 					//setfill rellena con un caracter, en este caso con cero ('0') donde haya datos con un digito justificados a la derecha.
+	<< setw( 2 ) << hora << ":" 			//setw Sirve para dar formato de ancho a los numeros ej. (sewt 2 = 00) (sewt 3 = 000)
 	<< setw( 2 ) << minuto << ":"
 	<< setw( 2 ) << segundo;
 } 											//Fin de la función imprimeUniversal
@@ -161,7 +161,7 @@ void Tiempo::imprimeUniversal(){
 //Funcion para imprimir el Tiempo en formato estándar************************************************************
 void Tiempo::imprimeEstandar(){
 	cout << "\n\tHora estandar :";
-	cout<< setfill( '0' )					//Rellena los datos con el cero donde haya un solo digito
+	cout<<setfill( '0' )					//Rellena los datos con el cero donde haya un solo digito
 		<< setw( 2 )<<( ( hora == 0 || hora == 12 ) ? 12 : hora % 12 )<< ":" //Si es 00 o 12 nos devuelve un 12 si no  modulo % 12	 	 				
 		<< setw( 2 ) << minuto << ":"		//el formato de hora es de dos digitos y son rellenados por setfill (1 digito)
 	 	<< setw( 2 ) << segundo
